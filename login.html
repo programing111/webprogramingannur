@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/564x/e9/c8/15/e9c8153f5e24cbe9709a17f2efc63dbf.jpg'); /* Ganti dengan URL gambar yang diinginkan */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .login-container img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .inputtext {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 2px solid #0a0076;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .tombol {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      background-color: #ff0000;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .tombol:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://i.ibb.co.com/WF5czr2/logo-Annur.png" alt="Logo">
+    <h2>Login</h2>
+    <form name="myform" method="post" class="form-group">
+      <input type="text" name="uname" class="inputtext" autocomplete="off" placeholder="Username">
+      <input type="password" name="pass" class="inputtext" autocomplete="off" placeholder="Password">
+      <button type="button" class="tombol" onclick="myfunction()">Login</button>
+      <div id="error-message" class="error-message"></div>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    function myfunction() {
+      var un = document.forms["myform"]["uname"].value;
+      var pw = document.forms["myform"]["pass"].value;
+      
+      // Data pengguna tunggal
+      var user = { username: "Satria", password: "Smart123" };
+
+      if (un === user.username && pw === user.password) {
+        window.location.href = 'index.html'; // Jika cocok, mengarahkan ke halaman index.html
+      } else {
+        document.getElementById("error-message").innerText = "Maaf username atau password tidak sesuai";
+      }
+    }
+  </script>
+</body>
+</html>
